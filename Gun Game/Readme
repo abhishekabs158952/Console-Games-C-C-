@@ -1,0 +1,16 @@
+##Direction to play :
+
+#movement
+w:move up
+s:move down
+d:move right
+a:move left
+
+#Gun Direction
+i:point gun to up
+k:point gun to down
+j:point gun to left
+l:point gun to right
+
+#Fire
+Spacebar
