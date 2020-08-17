@@ -1,0 +1,96 @@
+#include<stdio.h>
+#include<string.h>
+int main(){
+char a[200],b[200];
+int c,d,e;
+printf("        0   1   2   3   4\n\n");
+printf("        A   B   C   D   E\n\n");
+printf("        F   G   H   I   J\n\n");
+printf("        K   L   M   N   O\n\n");
+printf("        P   Q   R   S   T\n\n");
+printf("        U   V   W   X   Y\n\n");
+printf("                Z\n\n");
+printf("select column of word\n\n");
+gets(a);
+c=strlen(a);
+printf("\n\n");
+printf("        0   1   2   3   4   5\n\n");
+for(d=0;d<c;d++){
+    if(a[d]=='0')
+        printf("        A   F   K   P   U\n\n");
+    if(a[d]=='1')
+        printf("        B   G   L   Q   V\n\n");
+    if(a[d]=='2')
+        printf("        C   H   M   R   W   Z\n\n");
+    if(a[d]=='3')
+        printf("        D   I   N   S   X\n\n");
+    if(a[d]=='4')
+        printf("        E   J   O   T   Y\n\n");
+    }
+printf("Choose column of word\n\n");
+gets(b);
+printf("\n\nYour imagined word is: ");
+if(c==strlen(b)){
+    for(d=0;d<c;d++){
+        if(a[d]=='0'&&b[d]=='0')
+            printf("A");
+        if(a[d]=='0'&&b[d]=='1')
+            printf("F");
+        if(a[d]=='0'&&b[d]=='2')
+            printf("K");
+        if(a[d]=='0'&&b[d]=='3')
+            printf("P");
+        if(a[d]=='0'&&b[d]=='4')
+            printf("U");
+        if(a[d]=='1'&&b[d]=='0')
+            printf("B");
+        if(a[d]=='1'&&b[d]=='1')
+            printf("G");
+        if(a[d]=='1'&&b[d]=='2')
+            printf("L");
+        if(a[d]=='1'&&b[d]=='3')
+            printf("Q");
+        if(a[d]=='1'&&b[d]=='4')
+            printf("V");
+        if(a[d]=='2'&&b[d]=='0')
+            printf("C");
+        if(a[d]=='2'&&b[d]=='1')
+            printf("H");
+        if(a[d]=='2'&&b[d]=='2')
+            printf("M");
+        if(a[d]=='2'&&b[d]=='3')
+            printf("R");
+        if(a[d]=='2'&&b[d]=='4')
+            printf("W");
+        if(a[d]=='2'&&b[d]=='5')
+            printf("Z");
+        if(a[d]=='3'&&b[d]=='0')
+            printf("D");
+        if(a[d]=='3'&&b[d]=='1')
+            printf("I");
+        if(a[d]=='3'&&b[d]=='2')
+            printf("N");
+        if(a[d]=='3'&&b[d]=='3')
+            printf("S");
+        if(a[d]=='3'&&b[d]=='4')
+            printf("X");
+        if(a[d]=='4'&&b[d]=='0')
+            printf("E");
+        if(a[d]=='4'&&b[d]=='1')
+            printf("J");
+        if(a[d]=='4'&&b[d]=='2')
+            printf("O");
+        if(a[d]=='4'&&b[d]=='3')
+            printf("T");
+        if(a[d]=='4'&&b[d]=='4')
+            printf("Y");
+
+    }
+}
+else
+    printf("error\n\n");
+printf("\n\n");
+scanf("%d",&e);
+printf("%d",e);
+return 0;
+}
