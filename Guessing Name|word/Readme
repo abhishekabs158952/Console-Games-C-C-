@@ -1,1 +1,45 @@
 input string of number contaning the word group no. twice and you will know the guessed name/word.
+
+
+Example : suppose i decided a name : "ABHISHEK"
+
+        0   1   2   3   4
+
+        A   B   C   D   E
+
+        F   G   H   I   J
+
+        K   L   M   N   O
+
+        P   Q   R   S   T
+
+        U   V   W   X   Y
+
+                Z
+
+select column of word
+01233240   //input
+
+
+        0   1   2   3   4   5
+
+        A   F   K   P   U
+
+        B   G   L   Q   V
+
+        C   H   M   R   W   Z
+
+        D   I   N   S   X
+
+        D   I   N   S   X
+
+        C   H   M   R   W   Z
+
+        E   J   O   T   Y
+
+        A   F   K   P   U
+
+
+00113102  //input2
+
+And you will get the ans "ABHISHEK"
