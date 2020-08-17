@@ -1,0 +1,307 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include <Windows.h>
+void rs(int a[4][4],int i,int j){
+    int temp=j;
+    for(j=j;j>0;j--){
+        a[i][j]=a[i][j-1];
+    }
+    a[i][j]=0;
+}
+void ls(int a[4][4],int i,int j){
+    for(j=j;j<3;j++){
+        a[i][j]=a[i][j+1];
+    }
+    a[i][j]=0;
+}
+void us(int a[4][4],int i,int j){
+    for(i=i;i<3;i++){
+        a[i][j]=a[i+1][j];
+    }
+    a[i][j]=0;
+}
+void ds(int a[4][4],int i,int j){
+    for(i=i;i>0;i--){
+        a[i][j]=a[i-1][j];
+    }
+    a[i][j]=0;
+}
+void r(int a[4][4],int k){
+    int i,j,b=0,c=0,l,pi=1;
+AGAIN:    for(i=0;i<4;i++){
+        for(j=3;j>=0;j--){
+            b=0;
+            for(l=0;l<j;l++){
+                b=b+a[i][l];
+            }
+            while(a[i][j]==0&&b!=0){
+                rs(a,i,j);
+            }
+        }
+    }
+    if(pi==1){
+        pi++;
+        for(i=0;i<4;i++){
+            for(j=3;j>0;j--){
+                if(a[i][j]==a[i][j-1]){
+                    a[i][j]=2*a[i][j];
+                    a[i][j-1]=0;
+                }
+            }
+        }
+        goto AGAIN;
+    }
+}
+void l(int a[4][4],int k){
+    int i,j,b=0,c=0,l,pi=1;
+AGAIN:    for(i=0;i<4;i++){
+        for(j=0;j<4;j++){
+            b=0;
+            for(l=j+1;l<4;l++){
+                b=b+a[i][l];
+            }
+            while(a[i][j]==0&&b!=0){
+                ls(a,i,j);
+            }
+        }
+    }
+    if(pi==1){
+        pi++;
+        for(i=0;i<4;i++){
+            for(j=0;j<3;j++){
+                if(a[i][j]==a[i][j+1]){
+                    a[i][j]=2*a[i][j];
+                    a[i][j+1]=0;
+                }
+            }
+        }
+        goto AGAIN;
+    }
+}
+
+void u(int a[4][4],int k){
+    int i,j,b=0,c=0,l,pi=1;
+AGAIN:    for(j=0;j<4;j++){
+        for(i=0;i<4;i++){
+            b=0;
+            for(l=3;l>i;l--){
+                b=b+a[l][j];
+            }
+            while(a[i][j]==0&&b!=0){
+                us(a,i,j);
+//                print(a,i,j);
+//                system("CLS");
+            }
+        }
+    }
+    if(pi==1){
+        pi++;
+        for(j=0;j<4;j++){
+            for(i=0;i<3;i++){
+                if(a[i][j]==a[i+1][j]){
+                    a[i][j]=2*a[i][j];
+                    a[i+1][j]=0;
+                }
+            }
+        }
+        goto AGAIN;
+    }
+}
+
+void d(int a[4][4],int k){
+    int i,j,b=0,c=0,l,pi=1;
+AGAIN:    for(j=0;j<4;j++){
+        for(i=3;i>=0;i--){
+            b=0;
+            for(l=0;l<i;l++){
+                b=b+a[l][j];
+            }
+            while(a[i][j]==0&&b!=0){
+                ds(a,i,j);
+//                print(a,i,j);
+//                system("CLS");
+            }
+        }
+    }
+    if(pi==1){
+        pi++;
+        for(j=0;j<4;j++){
+            for(i=3;i>0;i--){
+                if(a[i][j]==a[i-1][j]){
+                    a[i][j]=2*a[i][j];
+                    a[i-1][j]=0;
+                }
+            }
+        }
+        goto AGAIN;
+    }
+}
+print(int a[4][4],int i,int j,int score){
+    printf("\ninstructions : ->:right,<-:left,us up arrow:up,us down arrow:down     'PREVIOUS:double tab backspace' \n ");
+    printf("\n\n\n\n\n\n\n\n\n\t\t\t\tMAX Score=2,62,140\t\tScore=%d\n\n                             .............................................\n",score);
+    for(i=0;i<4;i++){
+        printf("                             |");
+        for(j=0;j<4;j++){
+            if(a[i][j]!=0){
+                printf("   %4d   |",a[i][j]);
+            }
+            if(a[i][j]==0){
+                printf("   %4c   |",a[i][j]);
+//                k++;
+            }
+        }
+    printf("\n                             |----------|----------|----------|----------|\n");
+    }
+    printf("                             '''''''''''''''''''''''''''''''''''''''''''''\n");
+    Sleep(100);
+}
+int main(){
+char q='q',abs[49]="Welcome Game:2048 Created By:ABHISHEK KUMAR(ABS)";
+int i,j,k=16,newno=2,from=0,to=0,ch1,ch2,score=0,sum;
+int a[4][4]={0,0,0,0,0,2,0,0,0,0,0,2,0,0,0,0},as[4][4]={0,0,0,0,0,2,0,0,0,0,0,2,0,0,0,0};
+	printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\t\t\t\t\tLoading...\n\n\n\t\t\t\t");
+	for(i=0;i<20;i++)
+	{
+		Sleep(100);
+		printf("%c",143567);
+	}
+	system("CLS");
+	printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\t\t\t\t");
+	for(i=0;i<49;i++){
+        printf("%c",abs[i]);
+        Sleep(100);
+        if(i==7||i==17)
+            printf("\n\n\t\t\t\t");
+	}
+	Sleep(1000);
+	system("CLS");
+START :
+for(i=0;i<4;i++){
+    for(j=0;j<4;j++){
+        as[i][j]=0;
+        a[i][j]=0;
+    }
+}
+as[1][1]=2;
+a[1][1]=2;
+as[2][3]=2;
+a[2][3]=2;
+k=0;
+while(k!=1){
+BACK :
+    k=0;
+    to=0;
+    from=0;
+print(a,i,j,score);
+score=0;
+    for(i=0;i<4;i++){
+        for(j=0;j<4;j++){
+            if(a[i][j]!=0){
+                  score=score+a[i][j];
+            }
+            if(a[i][j]==0){
+                k++;
+            }
+        }
+    }
+    time_t t;
+    srand((unsigned)time(&t));
+    to=rand()%k;
+    newno=rand()%4;
+    if(newno!=0)
+       newno=2;
+    if(newno==0)
+        newno=4;
+ch1 = getch();
+ch2 = 0;
+if (ch1 == 0xE0) {
+ch2 = getch();
+    for(i=0;i<4;i++){
+            for(j=0;j<4;j++)
+                as[i][j]=a[i][j];
+    }
+    if(ch2==65){
+        for(i=0;i<4;i++){
+            for(j=0;j<4;j++)
+                a[i][j]=as[i][j];
+        }
+    }
+
+    if(ch2==77){
+        q='r';
+        r(a,k);
+    }
+    if(ch2==75){
+        q='l';
+        l(a,k);
+    }
+    if(ch2==72){
+        q='u';
+        u(a,k);
+    }
+    if(ch2==80){
+        q='d';
+        d(a,k);
+    }
+    sum=0;
+    for(i=0;i<4;i++){
+        for(j=0;j<4;j++){
+            if(as[i][j]==a[i][j])
+                sum++;
+        }
+    }
+    if(sum==16){
+        system("CLS");
+        goto BACK;
+    }
+ if(ch2!=65){
+    if(q=='r'||q=='l'||q=='u'||q=='d'){
+        i=0;
+        j=-1;
+        while(from<to){
+            if(j==3){
+                j=-1;
+                i++;
+            }
+            j++;
+            if(a[i][j]==0){
+                from++;
+            }
+        }
+        if(a[i][j]==0)
+            a[i][j]=newno;
+        if(to==0){
+            for(i=0;i<4;i++){
+                for(j=0;j<4;j++){
+                    if(a[i][j]==0){
+                       a[i][j]=newno;
+                       j=5;
+                       i=5;
+                    }
+                }
+            }
+        }
+    }
+}
+}
+else {
+        ch2=getch();
+if(ch2==8){
+    for(i=0;i<4;i++){
+        for(j=0;j<4;j++)
+            a[i][j]=as[i][j];
+    }
+}
+}
+system("CLS");
+}
+printf("\n\n\n\n\n\n\n\n                     SCORE : %d    \n\n\n\n",score);
+printf("                     GAME OVER\n\n\n");
+printf("                     For restart the game PRESS : 1 and Enter  \n\n\t\t\t\t\t\t\t\tA GAME BY ABS ");
+scanf("%d",&i);
+if(i==1){
+    i=0;
+    goto START;
+}
+return 0;
+}
