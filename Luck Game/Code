@@ -1,0 +1,179 @@
+#include<stdio.h>
+int main(){
+	int x,t=0;
+	printf("\t\t\t\t\t\tMIND GAME & DESTINATION FLASH");
+	printf("\n\t\t\t\t\t      *********************************");
+	do{
+   printf("\n\n");
+int a,b=5,c,d=0,e,f=3,j=0,k=0,nw,r=0;
+if(t>0){
+	printf("IF YOU WANT TO SKIP CHOOSE YOUR LEVEL : ");
+	scanf("%d",&d);
+	for(nw=1;nw<d&&nw<5;nw++){
+		b=b+5;
+		f++;
+		k=k+10;
+	}
+	for(nw=5;nw<d&&nw<10;nw++){
+		b*=2;
+		f++;
+		k+=10;
+	}
+	for(nw=10;nw<d;nw++){
+		b*=3;
+		f++;
+		k+=10;
+	}
+}
+for(d=d;d<10;d++){
+   printf("\t\t\t\tRANGE : 0 to %d\n\n",b);
+   srand(time(0));
+   a=rand()%b+1;
+   //printf("GUESS NUMBER IS %d\n\nYOU HAVE %d LIFE..!\n\n",a,f);
+    printf("\t\t\t\tYOU HAVE %d LIFE..! GUESS THE NUMBER \n\n",f);
+   for(e=0;e<f;e++){
+        printf("\t\t\t\t");
+       scanf("%d",&c);
+       if(c>a){
+        printf("\t\t\t\tYOU CHOOSED GREATER NUMBER  ,   %d : LIFE REMAINING\n\n",(f-e-1));
+       }
+       if(c<a){
+        printf("\t\t\t\tYOU CHOOSED LOWER NUMBER    ,   %d : LIFE REMAINING\n\n",(f-e-1));
+       }
+       if(c==a){
+        r++;
+        if(r==2){
+        f++;
+        r=0;
+        }
+       	printf("\t\t\t\tYOU HAVE COMPLETED IN : %d CHANCE\n",(e+1));
+       	k=k+10;
+       	j=j+k;
+       	if(d==0){
+            f++;
+       	}
+        printf("\t\t\t\tyes won this level:%d \n\n\t\t\t\tlevel up:%d\n\n",d+1,d+2);
+        printf("\t\t\t\t\t\t\t\t\t\t\t\t.............................\n");
+        break;
+       }
+   }
+   if(e==f){
+    goto END;
+   }
+   if(b==25){
+    break;
+   }
+   b+=5;
+   printf("\t\t\t\t\t\t\t\t\t\t\t\tSCORE IN THIS LEVEL : *%d*\n",k);
+   printf("\t\t\t\t\t\t\t\t\t\t\t\t.............................\n\n");
+}
+   printf("\n\n******************************");
+   printf("\n******************************\n\n");
+   printf("\nTOTAL SCORE %d\n\nMEDIUM LEVEL \n",j);
+   printf("\n\n*******************************");
+   printf("\n*******************************\n\n");
+
+for(d=5;d<10;d++){
+   printf("\t\t\t\tRANGE : 0 to %d\n\n",b);
+   srand(time(0));
+   a=rand()%b+1;
+   //printf("GUESS NUMBER IS %d\n\nYOU HAVE %d LIFE..!\n\n",a,f);
+   f=5;
+    printf("\t\t\t\tYOU HAVE %d LIFE..! GUESS THE NUMBER \n\n",f);
+   for(e=0;e<f;e++){
+        printf("\t\t\t\t");
+       scanf("%d",&c);
+       if(c>a){
+        printf("\t\t\t\tYOU CHOOSED GREATER NUMBER ,  %d : LIFE REMAINING\n\n",(f-e-1));
+       }
+       if(c<a){
+        printf("\t\t\t\tYOU CHOOSED LOWER NUMBER   ,  %d : LIFE REMAINING\n\n",(f-e-1));
+       }
+       if(c==a){
+        r++;
+        if(r==2){
+        f++;
+        r=0;
+        }
+       	printf("YOU HAVE COMPLETED IN : %d CHANCE",(e+1));
+       	k=k+10;
+       	j=j+k;
+       		if(d==5){
+            f++;
+       	    }
+        printf("\t\t\t\tyes won this level:%d \n\n\t\t\t\tlevel up:%d\n\n",d+1,d+2);
+        printf("\t\t\t\t\t\t\t\t\t\t\t\t.............................\n");
+        break;
+       }
+   }
+   if(e==f){
+    goto END;
+   }
+   b*=2;
+   printf("\t\t\t\t\t\t\t\t\t\t\t\tSCORE IN THIS LEVEL : *%d*\n",k);
+   printf("\t\t\t\t\t\t\t\t\t\t\t\t.............................\n\n");
+}
+
+   printf("\n\n******************************");
+   printf("\n******************************\n\n");
+   printf("\nTOTAL SCORE %d\n\nHARD LEVEL \n",j);
+   printf("\n\n*******************************");
+   printf("\n*******************************\n\n");
+for(d=0;d<10;d++){
+   printf("\t\t\t\tRANGE : 0 to %d\n\n",b);
+   srand(time(0));
+   a=rand()%b+1;
+   //printf("GUESS NUMBER IS %d\n\nYOU HAVE %d LIFE..!\n\n",a,f);
+    f=10;
+    printf("\t\t\t\tYOU HAVE %d LIFE..! GUESS THE NUMBER \n\n",f);
+   for(e=0;e<f;e++){
+        printf("\t\t\t\t");
+       scanf("%d",&c);
+       if(c>a){
+        printf("\t\t\t\tYOU CHOOSED GREATER NUMBER ,   %d : LIFE REMAINING\n\n",(f-e-1));
+       }
+       if(c<a){
+        printf("\t\t\t\tYOU CHOOSED GREATER NUMBER   ,   %d : LIFE REMAINING\n\n",(f-e-1));
+       }
+       if(c==a){
+        r++;
+        if(r==2){
+        f++;
+        r=0;
+        }
+       	printf("YOU HAVE COMPLETED IN : %d CHANCE",(e+1));
+       	k+=10;
+       	j=j+k;
+       		if(d==10){
+            f++;
+       	}
+        printf("\t\t\t\tyes won this level:%d \n\n\t\t\t\tlevel up:%d\n\n",d+1,d+2);
+        printf("\t\t\t\t\t\t\t\t\t\t\t\t.............................\n");
+        break;
+       }
+   }
+   if(e==f){
+    goto END;
+   }
+   if(b==25){
+    break;
+   }
+   b*=3;
+   printf("\t\t\t\t\t\t\t\t\t\t\t\tSCORE IN THIS LEVEL : *%d*\n",k);
+   printf("\t\t\t\t\t\t\t\t\t\t\t\t.............................\n\n");
+}
+
+END:printf("TOTAL POINT IS : %d",j);
+printf("\nGAME OVER\n\n");
+printf("Edited By.............'ABHI'&'SAM' TRAIL VERSION\n\n");
+printf("\t\t\t\t..........................\n");
+printf("\t\t\t\tFOR RESTART PRESS : '1'\n\t\t\t\tOTHERWISE PRESS   : '0'");
+printf("\n\t\t\t\t.........................\n");
+printf("\n\t\t\t\t\t\t\t\t..............................................................\n");
+printf("\t\t\t\t\t\t\t\tIF YOU RESTART YOU CAN CHOOSE YOUR OWN LEVEL.....!! & '1' EXTRA LIFE\n\t\t\t\t\t\t\t\tSO GO ON ");
+printf("\n\t\t\t\t\t\t\t\t..............................................................\n");
+scanf("%d",&x);
+t++;
+}while(x==1);
+return 0;
+}
